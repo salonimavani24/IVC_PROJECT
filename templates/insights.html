@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Insights</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='insights.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Expense Insights</h1>
+
+    <div class="card">
+        <h2>Total Spending</h2>
+        <p>₹ {{ total }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Total Transactions</h2>
+        <p>{{ count }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Highest Spending Category</h2>
+        <p>{{ highest }}</p>
+    </div>
+
+    <div class="message">
+        {{ message }}
+    </div>
+
+    <a href="/export">
+        <button>Download CSV</button>
+    </a>
+
+    <br><br>
+
+    <a href="/">
+        <button class="back-btn">Back to Dashboard</button>
+    </a>
+
+</div>
+
+<script src="{{ url_for('static', filename='insights.js') }}"></script>
+
+</body>
+</html>
