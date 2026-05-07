@@ -1,16 +1,20 @@
 console.log("Insights dashboard loaded");
 
-let cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
 
 cards.forEach(card => {
-
     card.addEventListener("mouseenter", () => {
-        card.style.transform = "scale(1.03)";
-        card.style.transition = "0.3s";
+        card.style.transform = "translateY(-6px) scale(1.01)";
+        card.style.transition = "transform 0.25s ease";
     });
 
     card.addEventListener("mouseleave", () => {
-        card.style.transform = "scale(1)";
+        card.style.transform = "translateY(0) scale(1)";
     });
+});
 
+const bubbles = document.querySelectorAll(".bubble");
+
+bubbles.forEach((bubble, index) => {
+    bubble.style.animationDelay = `${index * 0.4}s`;
 });
