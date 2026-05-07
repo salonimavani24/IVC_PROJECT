@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='insights-pretty.css') }}">
+</head>
+<body>
+
+<div class="scene">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-4"></div>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Expense Insights</h1>
+        </header>
+
+        <section class="stats-grid">
+            <div class="card">
+                <h2>Total Spending</h2>
+                <p>₹ {{ total }}</p>
+            </div>
+
+            <div class="card">
+                <h2>Total Transactions</h2>
+                <p>{{ count }}</p>
+            </div>
+
+            <div class="card">
+                <h2>Highest Spending Category</h2>
+                <p>{{ highest }}</p>
+            </div>
+        </section>
+
+        <div class="message">
+            {{ message }}
+        </div>
+
+        <div class="actions">
+            <a href="/" class="button secondary">Back</a>
+        </div>
+        <div class="download-container">
+            <a href="/export" class="download-fab" aria-label="Download CSV">⬇️</a>
+            <span class="download-label">Download CSV</span>
+        </div>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='insights.js') }}"></script>
+
+</body>
+</html>
