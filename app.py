@@ -53,5 +53,9 @@ def edit(id):
 
     return redirect("/")
 
+@app.route("/")
+def index():
+    return "Expense tracker is running. Use /add or /edit/<id> to interact."
+
 if __name__ == "__main__":
     app.run(debug=True)
